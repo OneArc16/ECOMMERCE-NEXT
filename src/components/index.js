@@ -1,2 +1,5 @@
 export * from './RegisterFrom'
 export * from './LoginForm'
+export * from './TopBar'
+export * from './Account'
+export * from './Menu'
