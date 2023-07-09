@@ -4,6 +4,7 @@ import { Tab } from 'semantic-ui-react'
 import styles from './account.module.scss'
 import { useAuth } from '@/hooks'
 import { useRouter } from 'next/router'
+import { Separator } from '@/components/Shared'
 
 export default function AccountPage() {
   const { user, logout } = useAuth();
@@ -37,8 +38,13 @@ export default function AccountPage() {
 
   {
     menuItem: {icon: "settings", content: "Ajustes"},
-    render: () => (<Tab.Pane attached={false}>
+    render: () => (
+    <Tab.Pane attached={false}>
       <Settings.ChangeNameForm />
+      <div className={styles.containerForms}>
+        <Settings.ChangeEmailForm />
+      </div>
+      <Separator height={80} />
     </Tab.Pane>
     ),
   },
